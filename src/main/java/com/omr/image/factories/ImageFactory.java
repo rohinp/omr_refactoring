@@ -10,8 +10,6 @@ import net.sourceforge.jiu.color.reduction.RGBToGrayConversion;
 import net.sourceforge.jiu.data.Gray8Image;
 import net.sourceforge.jiu.data.PixelImage;
 import net.sourceforge.jiu.data.RGB24Image;
-import net.sourceforge.jiu.ops.MissingParameterException;
-import net.sourceforge.jiu.ops.WrongParameterException;
 
 public class ImageFactory {
 

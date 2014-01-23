@@ -9,7 +9,7 @@ public class ImageUtility {
 
 	public final int cordinatesAdditionValues[][] = { { 0, 0 }, { 1, 1 },
 			{ -1, -1 }, { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 }, { 1, -1 },
-			{ -1, 1 }, { -1, -1 } };
+			{ -1, 1 }};
 
 	private PNGCodec pngCodec;
 	
