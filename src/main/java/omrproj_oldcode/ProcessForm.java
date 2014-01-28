@@ -7,12 +7,9 @@
  * and open the template in the editor.
  */
 
+package omrproj_oldcode;
 
-
-import net.sourceforge.jiu.codecs.*;
-import net.sourceforge.jiu.data.*;
-import net.sourceforge.jiu.color.reduction.*;
-import net.sourceforge.jiu.filters.*;
+import net.sourceforge.jiu.data.Gray8Image;
 
 /**
  *
@@ -20,7 +17,7 @@ import net.sourceforge.jiu.filters.*;
  */
 public class ProcessForm {
     
-	public void process(String[] args) {
+    public static void main(String[] args) {
         String imgfilename = args[0];
         String templatefilename = args[1];
         

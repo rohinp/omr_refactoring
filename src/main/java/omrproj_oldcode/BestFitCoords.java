@@ -7,13 +7,17 @@
  * and open the template in the editor.
  */
 
-
+package omrproj_oldcode;
 
 import net.sourceforge.jiu.codecs.*;
 import net.sourceforge.jiu.data.*;
 import net.sourceforge.jiu.color.reduction.*;
 import net.sourceforge.jiu.filters.*;
 
+/**
+ *
+ * @author Aaditeshwar Seth
+ */
 public class BestFitCoords {
     
     int x, y;

@@ -7,6 +7,7 @@
  * and open the template in the editor.
  */
 
+package omrproj_oldcode;
 
 import net.sourceforge.jiu.codecs.*;
 import net.sourceforge.jiu.data.*;

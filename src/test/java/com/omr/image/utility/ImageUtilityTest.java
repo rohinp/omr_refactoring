@@ -2,6 +2,7 @@ package com.omr.image.utility;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +17,27 @@ import com.omr.image.testdoubles.Gray8ImageTestDouble;
 public class ImageUtilityTest {
 
 	@Test
-	public void itShouldCreateAGray8Image() {
+	public void itShouldSaveFileAsPng() {
 		// given
 		String filePath = "data/fullatt.tif";
-		// when
+		String pngFilePath = "data/test.png";
 		PixelImage pixelImage = ImageFactory.createGray8Image(filePath);
+		ImageUtility imageUtility = new ImageUtility();
+		// when
+		imageUtility.saveImageToPNG(pixelImage, pngFilePath);
 		// then
-		assertTrue(pixelImage instanceof Gray8Image);
-
+		assertTrue(new File(pngFilePath).exists());
+	}
+	
+	@Test(expected = ImageUtility.ImageUtilitySaveToPNGException.class)
+	public void itShouldNotProcessToPNGForWrongPath(){
+		//given
+		String filePath = "data/main/fullatt.tif";
+		String pngFilePath = "data/test.png";
+		PixelImage pixelImage = ImageFactory.createGray8Image(filePath);
+		ImageUtility imageUtility = new ImageUtility();
+		// when
+		imageUtility.saveImageToPNG(pixelImage, pngFilePath);
 	}
 
 	@Test

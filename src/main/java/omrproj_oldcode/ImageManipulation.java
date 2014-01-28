@@ -7,14 +7,23 @@
  * and open the template in the editor.
  */
 
+package omrproj_oldcode;
 
-import net.sourceforge.jiu.codecs.*;
-import net.sourceforge.jiu.data.*;
-import net.sourceforge.jiu.color.reduction.*;
-import net.sourceforge.jiu.filters.*;
-import net.sourceforge.jiu.geometry.*;
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.StringTokenizer;
+
+import net.sourceforge.jiu.data.Gray8Image;
+import net.sourceforge.jiu.data.MemoryGray8Image;
+import net.sourceforge.jiu.data.PixelImage;
+import net.sourceforge.jiu.filters.MedianFilter;
+import net.sourceforge.jiu.geometry.ScaleReplication;
 
 /**
  *

@@ -1,17 +1,17 @@
 package com.omr.image.template;
 
 public enum TemplateParam {
-	a4width(21.0), a4height(29.7), circleOuter(1.5),
-    circleInner(0.6),vertDist(23.1), horizDist(16.8),
-    diagDist(28.5), markDiam(0.3);
+	A4WIDTH(21.0), A4HEIGHT(29.7), CIRCLE_OUTER(1.5),
+    CIRCLE_INNER(0.6),VERT_DIST(23.1), HORIZ_DIST(16.8),
+    DIAG_DIST(28.5), MARK_DIAM(0.3);
 	
-	private Double value;
+	private double value;
 	
-	private TemplateParam(Double value){
+	private TemplateParam(double value){
 		this.value = value;
 	}
 	
-	public Double getTemplateParam(){
+	public double getTemplateParam(){
 		return this.value;
 	}
 }

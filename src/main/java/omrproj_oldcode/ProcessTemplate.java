@@ -7,13 +7,9 @@
  * and open the template in the editor.
  */
 
+package omrproj_oldcode;
 
-import java.lang.*;
-import net.sourceforge.jiu.codecs.*;
-import net.sourceforge.jiu.data.*;
-import net.sourceforge.jiu.color.reduction.*;
-import net.sourceforge.jiu.filters.*;
-import net.sourceforge.jiu.geometry.*;
+import net.sourceforge.jiu.data.Gray8Image;
 
 /**
  *
@@ -21,8 +17,9 @@ import net.sourceforge.jiu.geometry.*;
  */
 public class ProcessTemplate {
 
-	public void Template(String[] args){
-        String filename = args[0];
+    public static void main(String args[]) {
+        //String filename = args[0];
+    	String filename = "data/fullatttemplate.tif";
 
         Gray8Image grayimage = ImageUtil.readImage(filename);
 //        Gray8Image grayimage = ImageUtil.readImage("../../2circle-org-colored-whole.tif");
@@ -35,8 +32,5 @@ public class ProcessTemplate {
         image.writeConfig(filename + ".config");
 //        image.writeAscTemplate("2circle-org-colored-whole.asc");
 //        image.writeConfig("2circle-org-colored-whole.config");
-    }
-
-	
-	
+    }    
 }
