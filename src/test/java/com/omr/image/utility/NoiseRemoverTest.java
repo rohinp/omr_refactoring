@@ -26,7 +26,7 @@ public class NoiseRemoverTest {
 	@Test
 	public void itShouldRemoveNoiseFromConcentricCircle() {
 		// given
-		NoiseRemover noiseRemover = new NoiseRemover(image, 100,100);
+		NoiseRemover noiseRemover = new NoiseRemover(image, 101,101);
 		// when
 		noiseRemover.removeNoise();
 		Gray8Image resultImage = noiseRemover.getNoiseRemovedImage();

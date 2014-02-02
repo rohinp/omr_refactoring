@@ -9,19 +9,19 @@ public class NoiseRemover {
 
 	private MedianFilter medianFilter;
 	private Gray8Image gray8Image;
-	private int areaLeft;
-	private int areaRight;
+	private int width;
+	private int height;
 	
-	public NoiseRemover(Gray8Image gray8Image,int areaLeft, int areaRight){
+	public NoiseRemover(Gray8Image gray8Image,int width, int height){
 		this.gray8Image = gray8Image;
 		this.medianFilter = new MedianFilter();
-		this.areaLeft = areaLeft;
-		this.areaRight = areaRight;
+		this.width = width;
+		this.height = height;
 	}
 	
 	public void removeNoise(){
 		try {
-			medianFilter.setArea(this.areaLeft, this.areaRight);
+			medianFilter.setArea(this.width, this.height);
 			medianFilter.setInputImage(gray8Image);
 			medianFilter.process();
 		} catch (MissingParameterException | WrongParameterException e) {

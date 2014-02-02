@@ -11,7 +11,7 @@ public enum TemplateParam {
 		this.value = value;
 	}
 	
-	public double getTemplateParam(){
+	public double getValue(){
 		return this.value;
 	}
 }

@@ -9,10 +9,9 @@
 
 package omrproj_oldcode;
 
-import net.sourceforge.jiu.codecs.*;
-import net.sourceforge.jiu.data.*;
-import net.sourceforge.jiu.color.reduction.*;
-import net.sourceforge.jiu.filters.*;
+import net.sourceforge.jiu.data.Gray8Image;
+import net.sourceforge.jiu.data.MemoryGray8Image;
+import net.sourceforge.jiu.filters.MedianFilter;
 
 /**
  *
