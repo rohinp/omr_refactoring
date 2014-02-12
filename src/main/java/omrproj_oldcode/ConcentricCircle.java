@@ -224,13 +224,11 @@ public class ConcentricCircle {
         for(int j = y; j < y + template.getHeight() && j < img.getHeight(); j++) {
             for(int i = x; i < x + template.getWidth() && i < img.getWidth(); i++) {
                 boolean isblack = (img.getSample(i, j) < 200 ? true : false);       // XXX
-                if(dump) { System.out.print((isblack & template.isWhite(i - x, j - y) ? "1" : ((!isblack) & template.isBlack(i - x, j - y)) ? "-" : "0")); }
                 if((isblack & template.isWhite(i - x, j - y) | (!isblack) & template.isBlack(i - x, j - y))) {
                     diff ++;
                 }
                 total ++;
             }
-            if(dump) { System.out.println(); }
         }
         return ((double)diff) / total;
     }

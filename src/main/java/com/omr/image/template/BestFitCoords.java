@@ -1,37 +1,33 @@
-/*
- * BestFitCoords.java
- *
- * Created on June 30, 2007, 12:16 AM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
+package com.omr.image.template;
 
-package omrproj_oldcode;
 
 import net.sourceforge.jiu.data.Gray8Image;
 
-/**
- *
- * @author Aaditeshwar Seth
- */
+import com.omr.image.datastructure.ConcentricCircleData;
+
 public class BestFitCoords {
-    
-    int x, y;
-    double approxCircleOuterX, approxCircleInnerX, aspectScale;
-    Gray8Image template;
-    double maxsim = -1;
+	private ConcentricCircleData concentricCircleData;
+	private int x,y;
+	private Gray8Image template;
+	private double maxsim;
+	double approxCircleOuterX, approxCircleInnerX, aspectScale;
+	
+	public BestFitCoords(ConcentricCircleTemplate concentricCircle ){
+		this.concentricCircleData = concentricCircle.getConcentriCircleData();
+		this.template = concentricCircle.createInmemoryConcentricCircle();
+		init();
+	}
 
-    public BestFitCoords(int x, int y, Gray8Image template, double approxCircleOuterX, double approxCircleInnerX, double aspectScale) {
-        this.x = x;
-        this.y = y;
-        this.template = template;
-        this.approxCircleOuterX = approxCircleOuterX;
-        this.approxCircleInnerX = approxCircleInnerX;
-        this.aspectScale = aspectScale;
-    }
-
-    public int getX() {
+	private void init() {
+		x = -1;
+		y = -1;
+		maxsim = -1;
+		this.approxCircleInnerX = this.concentricCircleData.getCircleInnerX();
+		this.approxCircleOuterX = this.concentricCircleData.getCircleOutterX();
+		this.aspectScale = this.concentricCircleData.getAspectScale();
+	}
+	
+	public int getX() {
         return x;
     }
 
@@ -86,5 +82,5 @@ public class BestFitCoords {
     public void setSim(double maxsim) {
         this.maxsim = maxsim;
     }
-    
+	
 }
