@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseFactory {
+	private static int counter = 1;
+
 	public static Connection createConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -21,8 +23,8 @@ public class DatabaseFactory {
 	public static void insertRecord(String field, String values) {
 		Statement statement = null;
 		String insertTableSQL = "INSERT INTO test"
-				+ "(rollnum, l1,l2,l3,l4,l5,l6,l7,l8,l9,10) " + "VALUES"
-				+ "("+ createInsertString(values) +")";
+				+ "(rollnum, l1,l2,l3,l4,l5,l6,l7,l8,l9,l10) " + "VALUES" + "("
+				+ createInsertString(values) + ")";
 		System.out.println(insertTableSQL);
 		Connection conn = createConnection();
 		try {
@@ -40,13 +42,22 @@ public class DatabaseFactory {
 
 		}
 	}
-	
-	public static String createInsertString(String values){
-		String[] lectures = values.split(" ");
-		String result = "1";
-		for(int loop = 0; loop < lectures.length; loop++) {
-			result += "," + lectures[loop];  
+
+	public static String createInsertString(String values) {
+		String[] lecturesAttended = values.split(" ");
+		int[] lecturesTotal = new int[10];
+		String result = "" + counter ++;
+		for (int attended = 0; attended < lecturesAttended.length; attended++) {
+			int lectureNum = Integer.parseInt(lecturesAttended[attended]);
+			for (int loop = 0; loop < 10; loop++) {
+				if(loop == lectureNum)
+					lecturesTotal[loop] = 1;
+				else
+					lecturesTotal[loop] = 0;
+			}
 		}
+		for(int a : lecturesTotal)
+			result += "," + a;
 		return result;
 	}
 
