@@ -1,12 +1,9 @@
 package com.omr.image.utility;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
-import net.sourceforge.jiu.data.Gray8Image;
 import net.sourceforge.jiu.data.PixelImage;
 
 import org.junit.Test;
@@ -19,8 +16,8 @@ public class ImageUtilityTest {
 	@Test
 	public void itShouldSaveFileAsPng() {
 		// given
-		String filePath = "data/fullatt.tif";
-		String pngFilePath = "data/test.png";
+		String filePath = "data/MARBIBM.tif";
+		String pngFilePath = "data/testcolor.png";
 		PixelImage pixelImage = ImageFactory.createGray8Image(filePath);
 		ImageUtility imageUtility = new ImageUtility();
 		// when

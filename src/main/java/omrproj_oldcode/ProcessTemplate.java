@@ -19,7 +19,7 @@ public class ProcessTemplate {
 
     public static void main(String args[]) {
         //String filename = args[0];
-    	String filename = "data/fullatttemplate.tif";
+    	String filename = "data/template.tif";
 
         Gray8Image grayimage = ImageUtil.readImage(filename);
 //        Gray8Image grayimage = ImageUtil.readImage("../../2circle-org-colored-whole.tif");

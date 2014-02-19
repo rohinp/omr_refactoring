@@ -18,8 +18,8 @@ import net.sourceforge.jiu.data.Gray8Image;
 public class ProcessForm {
     
     public static void main(String[] args) {
-        String imgfilename = args[0];
-        String templatefilename = args[1];
+        String imgfilename = "data/filled.tif";
+        String templatefilename = "data/template.tif";
         
         Gray8Image grayimage = ImageUtil.readImage(imgfilename);
 //        Gray8Image grayimage = ImageUtil.readImage("../../2circle-4.tif");
