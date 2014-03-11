@@ -20,12 +20,12 @@ public class DatabaseFactory {
 		}
 	}
 
-	public static void insertRecord(String field, String values) {
+	public static void insertRecord(String field, String values,int rollNumber) {
 		Statement statement = null;
-		String insertTableSQL = "INSERT INTO test"
-				+ "(rollnum, l1,l2,l3,l4,l5,l6,l7,l8,l9,l10) " + "VALUES" + "("
-				+ createInsertString(values) + ")";
-		System.out.println(insertTableSQL);
+		String insertTableSQL = "INSERT INTO daily_att_test"
+				+ "(rollnumber, total) " + "VALUES" + "("
+				+ createInsertString(values,rollNumber) + ")";
+		
 		Connection conn = createConnection();
 		try {
 			statement = conn.createStatement();
@@ -43,10 +43,12 @@ public class DatabaseFactory {
 		}
 	}
 
-	public static String createInsertString(String values) {
+	public static String createInsertString(String values,int rollNum) {
 		String[] lecturesAttended = values.split(" ");
 		int[] lecturesTotal = new int[10];
-		String result = "" + counter ++;
+		int tempTotal = 0;
+		String result = "" + rollNum;
+		
 		for (int attended = 0; attended < lecturesAttended.length; attended++) {
 			int lectureNum = Integer.parseInt(lecturesAttended[attended]);
 			for (int loop = 0; loop < 10; loop++) {
@@ -57,7 +59,9 @@ public class DatabaseFactory {
 			}
 		}
 		for(int a : lecturesTotal)
-			result += "," + a;
+			tempTotal+=a;
+		
+		result += "," + tempTotal;
 		return result;
 	}
 

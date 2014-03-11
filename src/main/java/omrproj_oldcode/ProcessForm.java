@@ -31,7 +31,7 @@ public class ProcessForm {
         image.readFields(templatefilename + ".fields");
         image.readAscTemplate(templatefilename + ".asc");
         image.searchMarks();
-        image.saveData(imgfilename + ".dat");
+        image.saveData(61);
 //        image.readConfig("2circle-org-colored-whole.config");
 //        image.readFields("2circle-org-colored-whole.fields");
 //        image.readAscTemplate("2circle-org-colored-whole.asc");

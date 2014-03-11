@@ -618,19 +618,16 @@ public class ImageManipulation {
 		ImageUtil.saveImage(markedImage, "marksfoundform.png");
 	}
 
-	public void saveData(String filename) {
+	public void saveData(int startRollnumber) {
 		try {
-			PrintWriter out = new PrintWriter(new FileOutputStream(filename));
 			Enumeration e = fields.keys();
+			int rollNumberCounter = startRollnumber;
+			
 			while (e.hasMoreElements()) {
 				Field field = (Field) (fields.get(e.nextElement()));
-				System.out.println(field.getName() + "="
-						+ field.getFieldValues());
-				out.println(field.getName() + "=" + field.getFieldValues());
 				DatabaseFactory.insertRecord(field.getName(),
-						field.getFieldValues());
+						field.getFieldValues(),rollNumberCounter++);
 			}
-			out.close();
 		} catch (Exception ex) {
 			ex.printStackTrace(System.out);
 		}
